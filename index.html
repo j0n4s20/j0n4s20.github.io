@@ -31,6 +31,7 @@
             background: #444;
             display: flex;
             justify-content: center;
+            flex-wrap: wrap;
             padding: 0.5rem 0;
         }
 
@@ -38,7 +39,8 @@
             color: #fff;
             text-decoration: none;
             margin: 0 1rem;
-            font-size: 1.2rem;
+            font-size: 1rem;
+            padding: 0.5rem;
         }
 
         nav a:hover {
@@ -48,7 +50,7 @@
         .container {
             max-width: 1100px;
             margin: auto;
-            padding: 2rem;
+            padding: 1rem;
         }
 
         .section {
@@ -60,8 +62,8 @@
         }
 
         .projects {
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 1rem;
         }
 
@@ -70,23 +72,19 @@
             border: 1px solid #ddd;
             border-radius: 5px;
             padding: 1rem;
-            width: calc(33% - 2rem);
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
             align-items: center;
-            box-sizing: border-box;
+            text-align: center;
         }
 
         .project img {
             max-width: 100%;
             height: auto;
             border-radius: 5px;
-            display: block;
             margin-bottom: 1rem;
         }
-
 
         .project h3 {
             margin-top: 0.5rem;
@@ -98,6 +96,35 @@
             text-align: center;
             padding: 1rem 0;
             margin-top: 2rem;
+        }
+
+        /* Optimierung für Mobile Geräte */
+        @media (max-width: 768px) {
+            header {
+                padding: 1rem;
+            }
+
+            nav a {
+                margin: 0.5rem;
+                font-size: 0.9rem;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            .projects {
+                grid-template-columns: 1fr;
+            }
+
+            .project {
+                padding: 0.8rem;
+            }
+
+            footer {
+                padding: 1rem;
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
@@ -120,17 +147,17 @@
             <h2>Projekte</h2>
             <div class="projects">
                 <div class="project">
-                    <img src="assets/img/angry_pengu.jpg" alt="1">
+                    <img src="assets/img/angry_pengu.jpg" alt="Projekt 1">
                     <h3>Projekt 1</h3>
                     <p></p>
                 </div>
                 <div class="project">
-                    <img src="assets/img/santa_pengu.jpg" alt="1">
+                    <img src="assets/img/santa_pengu.jpg" alt="Projekt 2">
                     <h3>Projekt 2</h3>
                     <p></p>
                 </div>
                 <div class="project">
-                    <img src="assets/img/happy_pengu.jpg" alt="1">
+                    <img src="assets/img/happy_pengu.jpg" alt="Projekt 3">
                     <h3>Projekt 3</h3>
                     <p></p>
                 </div>
